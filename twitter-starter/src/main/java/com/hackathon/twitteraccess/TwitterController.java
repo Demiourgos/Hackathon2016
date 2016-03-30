@@ -85,6 +85,7 @@ public class TwitterController {
 
 			@Override
 			public void onStatus(Status status) {
+				System.out.println(status.getText());
 				template.convertAndSend("/topic/tweets", new Tweet(status.getUser().getScreenName()+" : "+status.getText()));
 				
 			}
