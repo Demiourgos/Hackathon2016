@@ -8,3 +8,7 @@ Ideally each team should setup a sample account and use the codes generated - as
 Logic for twitter access in com.hackathon.twitteraccess.TwitterController - reads handles to be followed from application.properties, and then uses twitter stream api to listen - pushes messages to a web page via Websocket.
 
 Built on Spring-social container so teams can explore other social media channels as well.
+
+# Disclaimer
+
+Please do not edit or modify anything!
