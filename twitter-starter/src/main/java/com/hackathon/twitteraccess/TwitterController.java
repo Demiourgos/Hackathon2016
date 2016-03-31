@@ -85,7 +85,7 @@ public class TwitterController {
 
 			@Override
 			public void onStatus(Status status) {
-			   // System.out.println(status.getId()+" : "+this.hashCode());
+			  //  System.out.println(status.getId());
 				template.convertAndSend("/topic/tweets", new Tweet(status.getUser().getScreenName()+" : "+status.getText()));
 				
 			}
