@@ -28,7 +28,7 @@ This way you can access the methods of the contract.
 # Syndicate Loan Dapp(UI)
 - To just play around with the functionality of loan contract,you can use the decentralized app(Dapp) we have created which in backend calls the contract APIS.The UI is written using meteor framework.Please refer the folder loanDapp-UI.
 - To run the loanDapp,ssh to the instance again and navigate to loanDapp folder which is on the root and type meteor.It will start the dapp.Use the URL -[http://`hostname`/configPage](http://`hostname`/configPage) to access the syndicate loan Dapp.
-- New Dapp can be created by running the command *meteor create dappName* and refer the loanDapp to create the directory structure where you can write the logic to interact with ethereum geth console through Dapp.
+- New Dapp can be created by running the command `meteor create dappName` and refer the loanDapp to create the directory structure where you can write the logic to interact with ethereum geth console through Dapp.
 
 
 
