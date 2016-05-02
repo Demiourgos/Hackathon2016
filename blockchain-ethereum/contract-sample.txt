@@ -1,0 +1,83 @@
+contract CrowdFunding {
+     struct Funder {
+        address addr;
+        uint amount;
+    }
+    struct Loan {
+        address beneficiary;
+        uint fundingGoal;
+        uint numFunders;
+        uint amount;
+        uint deadline;
+        uint grace_period;
+        uint tenor;
+        uint interest_rate;
+        mapping (uint => Funder) funders;
+    }
+      uint numLoans;
+    mapping (uint => Loan) loans;
+    
+    function newLoan(address beneficiary, uint goal, uint deadline, uint grace_period, uint tenor, uint interest_rate) returns (uint LoanID) {
+        LoanID = numLoans++; 
+        Loan l = loans[LoanID];
+        l.beneficiary = beneficiary;
+        l.fundingGoal = goal;
+        l.deadline = block.number + deadline;
+        l.grace_period = l.deadline + grace_period;
+        l.tenor = l.grace_period + tenor;
+    }
+    function contribute(uint LoanID) {
+        Loan l = loans[LoanID];
+        Funder f = l.funders[l.numFunders++]; 
+        f.addr = msg.sender;
+        f.amount = msg.value;
+        l.amount += f.amount;
+    }
+    function checkGoalReached(uint LoanID) returns (bool reached) {
+        Loan l = loans[LoanID];
+        if (l.amount >= l.fundingGoal){
+            uint i = 0;
+            uint f = l.numFunders;
+            l.beneficiary.send(l.amount); 
+            l.amount = 0;
+            l.beneficiary = 0;
+            l.fundingGoal = 0;
+            l.deadline = 0;
+            l.numFunders = 0;
+            while (i <= f){
+                l.funders[i].addr = 0;
+                l.funders[i].amount = 0;
+                i++;
+            }
+        return true;
+        }
+        if (l.deadline <= block.number){
+            uint j = 0;
+            uint n = l.numFunders;
+            l.beneficiary = 0;
+            l.fundingGoal = 0;
+            l.numFunders = 0;
+            l.deadline = 0;
+            l.amount = 0;
+            while (j <= n){
+                l.funders[j].addr.send(l.funders[j].amount);
+                l.funders[j].addr = 0;
+                l.funders[j].amount = 0;
+                j++;
+            }
+            return true;
+        }
+        return false;
+    }
+    
+     function repayLoan(uint LoanID) {
+        Loan l = loans[LoanID];
+        Funder f = l.funders[l.numFunders++]; 
+        f.addr = msg.sender;
+        f.amount = msg.value;
+        l.amount += f.amount;
+    }
+    
+    
+}
+
