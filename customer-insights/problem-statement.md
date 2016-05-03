@@ -21,4 +21,25 @@ One of the examples of such an observation subject could be -
                 <li>Generate recommendations based on generated hypotheses and RBS service offerings ( R which will be a function of H and O).
 </ul>
 </ul> 
-Some of the examples of RC are - X
+Some of the examples of RC are - 
+<ul>
+<li>SYTNER GROUP LIMITED                              </li>
+<li>ARNOLD CLARK AUTOMOBILES LTD                      </li>
+<li>PENDRAGON MANAGEMENT SERVICES LIMITED             </li>
+<li>MANHEIM AUCTIONS LTD                              </li>
+<li>CAPITA EMPLOYEE BENEFITS LTD                      </li>
+<li>INTERNATIONAL FINANCIAL DATA SERVICES LIMITED     </li>
+<li>BABCOCK INTERNATIONAL GROUP PLC                   </li>
+<li>TOWERGATE UNDERWRITING GROUP LTD                  </li>
+<li>SHOOSMITHS LLP                                    </li>
+<li>ADDISON MOTORS LIMITED                            </li>
+<li>COFUNDS LIMITED                                   </li>
+<li>SHAWBROOK BANK LIMITED                            </li>
+<li>OLD MUTUAL WEALTH LIFE ASSURANCE                  </li>
+<li>TAYLOR WIMPEY PLC                                 </li>
+<li>MERCEDES-BENZ RETAIL GROUP UK LTD                 </li>
+<li>MARKERSTUDY LIMITED                               </li>
+<li>TRAVIS PERKINS PLC                                </li>
+<li>DLA PIPER UK LLP                                  </li>
+<li>THISTLE INSURANCE SERVICES LIMITED                </li>
+</ul>
